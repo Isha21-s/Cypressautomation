@@ -1,30 +1,24 @@
-export class loginpage{
+export class LoginPage {
 
-    weblocator={
-        or_UserName:'input[placeholder="Username"]',
-        or_Password:'input[placeholder="Password"]',
-        or_login:'button[type="Submit"]'
+    weblocators = {
+        or_UserName: "input[placeholder='Username']",
+        or_Password: "input[placeholder='Password']",
+        or_login: "button[type='submit']"
+    };
 
-    }
-
-    OpenURL()
-    {
+    OpenURL() {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     }
 
-    Enter_UserName(username)
-        {
-            cy.get(this.weblocators.or_UserName).type(username);
-        }
+    Enter_UserName(userName) {
+        cy.get(this.weblocators.or_UserName).type(userName);
+    }
     
-    Enter_Password(password)
-
-    {
-        cy.get(this.weblocators.or_Password).type()
+    Enter_Password(Upass) {
+        cy.get(this.weblocators.or_Password).type(Upass);
     }
 
-    Click_Login()
-    {
-        cy.get(this.weblocators.or_login).click
+    Click_Login() {
+        cy.get(this.weblocators.or_login).click(); 
     }
 }

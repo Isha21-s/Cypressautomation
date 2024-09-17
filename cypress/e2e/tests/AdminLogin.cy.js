@@ -1,17 +1,14 @@
-import {loginpage} from '../../pages/loginpage.cy';
+import { LoginPage } from '../../pages/loginpage.cy';
 import credentials from '../../fixtures/credentials.json';
 
+const loginOBJ = new LoginPage();
 
-const loginOBJ=new loginpage();
+describe('Admin login', () => {
 
-describe('Admin login',()=>{
-    
-    it('login with Valid credentials',()=>{
+    it('login with valid credentials', () => {
         loginOBJ.OpenURL();
-        loginOBJ.Enter_UserName();
-        loginOBJ.Enter_Password();
+        loginOBJ.Enter_UserName(credentials.Username);
+        loginOBJ.Enter_Password(credentials.Password);
         loginOBJ.Click_Login();
-    
-
-    } )
-})
+    });
+});
